@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from 'react';
+import { Route, Switch } from 'react-router';
+import Header from './components/Header';
+import startMockApi from './mocks/api';
 
-function App() {
+// Pages
+import HomePage from './routes/HomePage';
+import CharactersPage from './routes/CharactersPage';
+import CounterPage from './routes/CounterPage';
+
+const App: FC = () => {
+  startMockApi();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Switch>
+        <Route path="/characters">
+          <CharactersPage />
+        </Route>
+        <Route path="/counter">
+          <CounterPage />
+        </Route>
+        <Route path="/">
+          <HomePage />
+        </Route>
+      </Switch>
     </div>
   );
-}
-
+};
 export default App;

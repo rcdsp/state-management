@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import axios from 'axios';
 import App from './App';
+import { SessionProvider } from './state/SessionContext';
+import { SWRConfig } from 'swr';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SessionProvider>
+      <SWRConfig
+        value={{
+          suspense: true,
+          refreshInterval: 3000,
+          fetcher: (url) => axios.get(url).then((res) => res.data),
+        }}
+      >
+        <BrowserRouter>
+          <CssBaseline />
+          <App />
+        </BrowserRouter>
+      </SWRConfig>
+    </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
