@@ -1,16 +1,16 @@
 import { FC, Suspense } from 'react';
-import CharacterList from '../components/CharacterList';
+import PostList from '../components/CharacterList';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-const CharactersPage: FC = () => {
+const PostsPage: FC = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <Suspense fallback={<CircularProgress />}>
-        <CharacterList />
+        <PostList />
       </Suspense>
     </Box>
   );
 };
 
-export default CharactersPage;
+export default PostsPage;

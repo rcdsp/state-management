@@ -1,18 +1,16 @@
 import useSWR from 'swr';
 import { FC } from 'react';
 
-import { Character } from '../mocks/api/index';
+import { Post } from '../mocks/api/index';
 
-const CharacterList: FC = () => {
-  const { data, error } = useSWR('/api/characters');
+const PostList: FC = () => {
+  const { data, error } = useSWR('/api/posts');
   return (
     <ul>
-      {data.characters.length &&
-        data.characters.map((char: Character) => (
-          <li key={char.id}>{char.name}</li>
-        ))}
+      {data.posts.length &&
+        data.posts.map((post: Post) => <li key={post.id}>{post.title}</li>)}
     </ul>
   );
 };
 
-export default CharacterList;
+export default PostList;

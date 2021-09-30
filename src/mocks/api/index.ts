@@ -1,12 +1,14 @@
 import { createServer } from 'miragejs';
 
-export type CharactersResponse = {
-  characters: Character[];
+export type PostsResponse = {
+  posts: Post[];
 };
 
-export type Character = {
+export type Post = {
   id: number;
-  name: string;
+  title: string;
+  content: string;
+  year: number;
 };
 
 const startMockApi = (): void => {
@@ -14,12 +16,30 @@ const startMockApi = (): void => {
     routes() {
       this.namespace = 'api';
 
-      this.get('/characters', () => {
+      this.get('/posts', () => {
         return {
-          characters: [
-            { id: 1, name: 'Paladin', year: 2010 },
-            { id: 2, name: 'Sorceress', year: 2014 },
-            { id: 3, name: 'Amazon', year: 2017 },
+          posts: [
+            {
+              id: 1,
+              title: 'Post 1',
+              content: '',
+              year: 2010,
+              likes: 0 /* comments */,
+            },
+            {
+              id: 2,
+              title: 'Post 2',
+              content: '',
+              year: 2014,
+              likes: 0 /* comments */,
+            },
+            {
+              id: 3,
+              title: 'Post 3',
+              content: '',
+              year: 2017,
+              likes: 0 /* comments */,
+            },
           ],
         };
       });

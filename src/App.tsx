@@ -5,7 +5,7 @@ import startMockApi from './mocks/api';
 
 // Pages
 import HomePage from './routes/HomePage';
-import CharactersPage from './routes/CharactersPage';
+import PostsPage from './routes/PostsPage';
 import CounterPage from './routes/CounterPage';
 
 const App: FC = () => {
@@ -15,8 +15,8 @@ const App: FC = () => {
     <div className="App">
       <Header />
       <Switch>
-        <Route path="/characters">
-          <CharactersPage />
+        <Route path="/posts">
+          <PostsPage />
         </Route>
         <Route path="/counter">
           <CounterPage />
