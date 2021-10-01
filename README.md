@@ -1,3 +1,7 @@
+# State Management app for slides.
+
+This project is to back up the State Management Slides presentation, it contains most of what is shown in the presentation at different states.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
