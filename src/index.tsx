@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import App from './App';
-import { SessionProvider } from './state/SessionContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { SWRConfig } from 'swr';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { CssBaseline } from '@mui/material';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SessionProvider>
+    <ThemeProvider>
       <SWRConfig
         value={{
           suspense: true,
@@ -23,7 +23,7 @@ ReactDOM.render(
           <App />
         </BrowserRouter>
       </SWRConfig>
-    </SessionProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

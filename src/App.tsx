@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Route, Switch } from 'react-router';
 import Header from './components/Header';
-import startMockApi from './mocks/api';
 
 // Pages
 import HomePage from './routes/HomePage';
@@ -9,8 +8,6 @@ import PostsPage from './routes/PostsPage';
 import CounterPage from './routes/CounterPage';
 
 const App: FC = () => {
-  startMockApi();
-
   return (
     <div className="App">
       <Header />

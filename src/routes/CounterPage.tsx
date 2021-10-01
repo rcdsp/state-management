@@ -9,7 +9,7 @@ const CounterPage: FC = () => {
   const increment = () => setCount((count) => count + 1);
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="sm">
       <Counter count={count} increment={increment} />
       <CounterDisplay count={count}>
         <CounterBanner count={count} />

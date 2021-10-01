@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Button } from '@mui/material';
 
 type CounterType = {
   count: number;
@@ -6,7 +7,11 @@ type CounterType = {
 };
 
 const Counter: FC<CounterType> = ({ count, increment }) => {
-  return <button onClick={increment}>{count}</button>;
+  return (
+    <Button variant="contained" onClick={increment}>
+      {count}
+    </Button>
+  );
 };
 
 export default Counter;
