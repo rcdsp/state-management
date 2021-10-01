@@ -1,19 +1,14 @@
-import { FC, Suspense } from 'react';
-import PostList from '../../common/components/PostList';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import ErrorBoundary from '../../common/components/ErrorBoundary';
+import { FC } from 'react';
 
-const PostsPage: FC = () => {
+import Box from '@mui/material/Box';
+import PostList from '../../features/posts/PostsList';
+
+const PostPage: FC = () => {
   return (
     <Box sx={{ display: 'flex' }}>
-      <ErrorBoundary fallback={<p>Could not fetch data</p>}>
-        <Suspense fallback={<CircularProgress />}>
-          <PostList />
-        </Suspense>
-      </ErrorBoundary>
+      <PostList />
     </Box>
   );
 };
 
-export default PostsPage;
+export default PostPage;

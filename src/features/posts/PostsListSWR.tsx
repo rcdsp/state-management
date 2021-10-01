@@ -1,23 +1,16 @@
 import useSWR from 'swr';
 import { FC } from 'react';
-
-type Post = {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-};
+import { Post } from '../../services/api';
 
 const PostList: FC = () => {
+  /* error and loading state can also be obtained from useSWR */
   const { data } = useSWR('https://jsonplaceholder.typicode.com/posts');
 
   return (
     <ul>
-      <ul>
-        {data.map((post: Post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
+      {data?.map((post: Post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
     </ul>
   );
 };

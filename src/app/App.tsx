@@ -4,7 +4,8 @@ import Header from '../common/components/Header';
 
 // Pages
 import HomePage from './routes/HomePage';
-import PostsPage from './routes/PostsPage';
+import PostPage from './routes/PostsPage';
+import PostPageSWR from './routes/PostsPageSWR';
 import CounterPage from './routes/CounterPage';
 
 const App: FC = () => {
@@ -12,8 +13,11 @@ const App: FC = () => {
     <div className="App">
       <Header />
       <Switch>
+        <Route path="/posts-swr">
+          <PostPageSWR />
+        </Route>
         <Route path="/posts">
-          <PostsPage />
+          <PostPage />
         </Route>
         <Route path="/counter">
           <CounterPage />
