@@ -9,14 +9,14 @@ type Post = {
 };
 
 const PostList: FC = () => {
-  const { data } = useSWR('https://.typicode.com/posts');
+  const { data } = useSWR('https://jsonplaceholder.typicode.com/posts');
 
   return (
     <ul>
       <ul>
         {data.map((post: Post) => (
           <li key={post.id}>{post.title}</li>
-        ))}{' '}
+        ))}
       </ul>
     </ul>
   );

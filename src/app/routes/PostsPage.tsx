@@ -1,8 +1,8 @@
 import { FC, Suspense } from 'react';
-import PostList from '../components/PostList';
+import PostList from '../../common/components/PostList';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import ErrorBoundary from '../components/ErrorBoundary';
+import ErrorBoundary from '../../common/components/ErrorBoundary';
 
 const PostsPage: FC = () => {
   return (

@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 import { Button } from '@mui/material';
 
 type CounterDisplayType = {

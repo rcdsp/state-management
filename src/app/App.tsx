@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Route, Switch } from 'react-router';
-import Header from './components/Header';
+import Header from '../common/components/Header';
 
 // Pages
 import HomePage from './routes/HomePage';

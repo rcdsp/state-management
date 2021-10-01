@@ -1,29 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import App from './App';
+import App from './app/App';
 import { ThemeProvider } from './context/ThemeContext';
 import { SWRConfig } from 'swr';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from './app/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ReduxProvider store={store}>
       <SWRConfig
         value={{
           suspense: true,
-          refreshInterval: 3000,
           fetcher: (url) => axios.get(url).then((res) => res.data),
         }}
       >
-        <BrowserRouter>
-          <CssBaseline />
-          <App />
-        </BrowserRouter>
+        <ThemeProvider>
+          <BrowserRouter>
+            <CssBaseline />
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
       </SWRConfig>
-    </ThemeProvider>
+    </ReduxProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

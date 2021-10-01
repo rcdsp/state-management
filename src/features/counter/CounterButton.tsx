@@ -6,7 +6,7 @@ type CounterType = {
   increment: () => void;
 };
 
-const Counter: FC<CounterType> = ({ count, increment }) => {
+const CounterButton: FC<CounterType> = ({ count, increment }) => {
   return (
     <Button variant="contained" onClick={increment}>
       {count}
@@ -14,4 +14,4 @@ const Counter: FC<CounterType> = ({ count, increment }) => {
   );
 };
 
-export default Counter;
+export default CounterButton;
